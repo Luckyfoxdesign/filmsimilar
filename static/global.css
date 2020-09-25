@@ -355,8 +355,10 @@ template {
 
 :root {
 	--Violet: #7e3bd5;
+	--Violet90: #220b66;
 	--GrayCC: #cccccc;
 	--Gray33: #333333;
 	--Gray75: #757575;
 	--Gray99: #999999;
+	--White: #ffffff;
 }

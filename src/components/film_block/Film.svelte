@@ -1,27 +1,54 @@
 <script>
+	import FilmPoster from "./FilmPoster.svelte"
+
+	export let src
+	export let title
+	export let year
 </script>
 
 <style lang="scss">
 	.film {
-		&__poster {
-			width: 174px;
-			height: 256px;
-			overflow: hidden;
-			border-radius: 4px;
+		&-info {
+			margin-top: 8px;
+			max-width: 174px;
 		}
-	}
-	img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+		&-title {
+			color: var(--Gray33);
+			line-height: 1.214;
+			font-weight: 700;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			-webkit-box-orient: vertical;
+		}
+		&-description {
+			line-height: 1.214;
+			font-weight: 400;
+			display: -webkit-box;
+			color: var(--Gray75);
+			margin-top: 4px;
+			-webkit-line-clamp: 2;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			-webkit-box-orient: vertical;
+			margin-bottom: 0;
+		}
+		// &-genres {
+		// 	display: inline;
+		// 	-webkit-line-clamp: 2;
+		// 	overflow: hidden;
+		// 	text-overflow: ellipsis;
+		// 	-webkit-box-orient: vertical;
+		// 	max-width: 174px;
+		// }
 	}
 </style>
 
 <div class="film">
-	<div class="film__poster">
-		<img
-			src="https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/c3abfda6-8d61-4bb3-b5b7-9ac2474f715c/300x450"
-			alt=""
-			align="center" />
+	<FilmPoster {src} />
+	<div class="film-info">
+		<div class="film-title">{title}</div>
+		<p class="film-description"><span class="film-production">{year}</span> • <span class="film-genres" /></p>
 	</div>
 </div>

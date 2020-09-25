@@ -70,7 +70,7 @@
 <div class="navigation">
 	<nav>
 		<a
-			class="link {currentTab === '/' ? 'active' : ''}"
+			class="link {currentTab === '/' || currentTab.includes('movies') ? 'active' : ''}"
 			data-active="no"
 			aria-current={segment === undefined ? 'page' : undefined}
 			href="."

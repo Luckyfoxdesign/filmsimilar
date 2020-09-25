@@ -1,4 +1,5 @@
 <script>
+	import Footer from "../components/Footer.svelte"
 	import Header from "../components/Header.svelte"
 </script>
 
@@ -6,6 +7,11 @@
 	main {
 		display: flex;
 		justify-content: center;
+		height: 100%;
+	}
+
+	footer {
+		height: 400px;
 	}
 </style>
 
@@ -13,3 +19,5 @@
 <main>
 	<slot />
 </main>
+
+<Footer />
