@@ -7,7 +7,7 @@
 	main {
 		display: flex;
 		justify-content: center;
-		height: 100%;
+		min-height: calc(100vh - 74px);
 	}
 
 	footer {

@@ -1,16 +1,16 @@
 <script context="module">
-	// export function preload() {
-	// 	return this.fetch("/index.json")
-	// 		.then((r) => r.json())
-	// 		.then((films) => {
-	// 			return { films }
-	// 		})
-	// }
+	export function preload() {
+		return this.fetch("/index.json")
+			.then((r) => r.json())
+			.then((films) => {
+				return { films }
+			})
+	}
 </script>
 
 <script>
-	// export let films
-	// import Film from "../components/film_block/Film.svelte"
+	export let films
+	import Film from "../components/film_block/Film.svelte"
 </script>
 
 <style lang="scss">
@@ -55,11 +55,11 @@
 	<div class="films">
 		<h1>Популярные фильмы</h1>
 		<div class="films-list">
-			<!-- {#each films as { title, year, img }}
+			{#each films as { title, year, img }}
 				<Film {title} {year} src={img} />
 			{:else}
 				<p>Loading...</p>
-			{/each} -->
+			{/each}
 		</div>
 	</div>
 	<div class="sidebar">
