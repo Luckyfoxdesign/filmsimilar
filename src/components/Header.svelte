@@ -4,7 +4,7 @@
 	import SearchInput from "./SearchInput.svelte"
 </script>
 
-<style lang="scss">
+<style>
 	header {
 		display: flex;
 		justify-content: center;

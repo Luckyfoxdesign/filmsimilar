@@ -2,7 +2,7 @@
 	footer {
 		display: flex;
 		justify-content: center;
-		background-color: var(--Gray33);
+		background-color: #151a30;
 	}
 	.contaner {
 		width: 1024px;
@@ -12,11 +12,11 @@
 		row-gap: 8px;
 		padding-top: 12px;
 		padding-bottom: 16px;
-		color: var(--White);
+		color: var(--Gray75);
 	}
 	.link {
 		text-decoration: none;
-		color: var(--White);
+		color: var(--Gray75);
 	}
 </style>
 

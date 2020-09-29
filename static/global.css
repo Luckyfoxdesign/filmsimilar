@@ -7,6 +7,30 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url("fonts/Inter-Bold-slnt=0.ttf") format("truetype");
+	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("fonts/Inter-Medium-slnt=0.ttf") format("truetype");
+	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+@font-face {
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("fonts/Inter-Regular-slnt=0.ttf") format("truetype");
+	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
 
 html {
 	line-height: 1.15; /* 1 */
@@ -355,6 +379,7 @@ template {
 
 :root {
 	--Violet: #7e3bd5;
+	--Violet80: #32127b;
 	--Violet90: #220b66;
 	--Green60: #85bc02;
 	--Green70: #6b9d02;

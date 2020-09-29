@@ -1,24 +1,44 @@
 <script context="module">
-	export function preload() {
-		return this.fetch("/index.json")
-			.then((r) => r.json())
-			.then((films) => {
-				return { films }
-			})
-	}
+	import MovieAdditionalInfo from "./../../components/films/MovieAdditionalInfo.svelte"
+	// export function preload() {
+	// 	return this.fetch("/index.json")
+	// 		.then((r) => r.json())
+	// 		.then((films) => {
+	// 			return { films }
+	// 		})
+	//}
 </script>
 
 <script>
-	import ButtonPrimary from "./../../components/ButtonPrimary.svelte"
+	import ButtonPrimary from "../../components/ButtonPrimary.svelte"
 	import FilmPoster from "../../components/film_block/FilmPoster.svelte"
 	import Film from "../../components/film_block/Film.svelte"
 	import Tag from "../../components/Tag.svelte"
+	import { onMount } from "svelte"
 
-	export let films
+	let getAdditionalFilmsPromise
+	let isLoading = true
+
+	async function getAdditionalFilms() {
+		const res = await fetch("/index.json")
+		const text = await res.json()
+		if (res.ok) {
+			return text
+		} else {
+			throw new Error(text)
+		}
+	}
+
+	// onMount(() => {
+	// 	isLoading = false
+	// 	getAdditionalFilmsPromise = getPopularFilms()
+	// })
+
+	// export let films
 	let r = "https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/cc9a826d-74e1-4710-b665-63de8c423561/300x450"
 </script>
 
-<style lang="scss">
+<style>
 	.container {
 		display: grid;
 		grid-template-columns: 800px 1fr;
@@ -30,6 +50,7 @@
 		grid-template-columns: 1fr;
 		grid-template-rows: auto;
 		row-gap: 32px;
+		margin-bottom: 96px;
 	}
 	.sidebar {
 		border-left: 0.5px solid var(--GrayCC);
@@ -69,6 +90,9 @@
 		column-gap: 16px;
 		align-items: end;
 	}
+	.trailer {
+		border-radius: 6px;
+	}
 	.film-raiting {
 		margin-top: 8px;
 		margin-bottom: 24px;
@@ -88,19 +112,17 @@
 	p {
 		margin-top: 0;
 		margin-bottom: 0;
-		line-height: 20px;
+		line-height: 1.429;
 		margin-right: 32px;
 		color: var(--Gray33);
 	}
-	.films {
-		&-list {
-			display: grid;
-			grid-template-columns: repeat(4, 174px);
-			grid-template-rows: auto;
-			margin-top: 24px;
-			row-gap: 24px;
-			column-gap: 24px;
-		}
+	.films-list {
+		display: grid;
+		grid-template-columns: repeat(4, 174px);
+		grid-template-rows: auto;
+		margin-top: 24px;
+		row-gap: 24px;
+		column-gap: 24px;
 	}
 	h2 {
 		margin-top: 0;
@@ -109,24 +131,18 @@
 	.tag-cloud {
 		margin-right: 32px;
 	}
-	.film-tags {
-		// margin-bottom: 48px;
-		&__tags-block {
-			display: flex;
-			list-style: none;
-			list-style-type: none;
-			flex-wrap: wrap;
-			//justify-content: space-between;
-			//align-content: space-between;
-			margin: 0;
-			padding: 0;
-		}
-		&__list-item {
-			display: inline-block;
-			margin-right: 8px;
-			margin-bottom: 8px;
-			//float: left;
-		}
+	.film-tags__list-item {
+		display: inline-block;
+		margin-right: 8px;
+		margin-bottom: 8px;
+	}
+	.film-tags__tags-block {
+		display: flex;
+		list-style: none;
+		list-style-type: none;
+		flex-wrap: wrap;
+		margin: 0;
+		padding: 0;
 	}
 </style>
 
@@ -156,7 +172,7 @@
 						<div class="film-review-raiting">7.8/10</div>
 						<div class="film-review-count">124000</div>
 					</div>
-					<ButtonPrimary />
+					<ButtonPrimary name="Искать похожие фильмы" />
 				</div>
 			</div>
 		</div>
@@ -168,22 +184,32 @@
 		</p>
 		<div class="film-trailer">
 			<h2>Трейлер</h2>
-			<iframe
+			<div class="trailer">
+				<!-- <iframe
 				width="768"
 				height="432"
 				src="https://www.youtube.com/embed/e1l1QnJ7WA8"
 				frameborder="0"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen />
+				allowfullscreen /> -->
+			</div>
 		</div>
 		<div class="view-more">
 			<h2>Смотрите также</h2>
 			<div class="films-list">
-				{#each films as { title, year, img }}
-					<Film {title} {year} src={img} />
-				{:else}
-					<p>Loading...</p>
-				{/each}
+				<!-- {#if !isLoading}
+					{#await getPopularFilmsPromise}
+						<p>...подождите</p>
+					{:then films}
+						{#each films as { title, year, img }}
+							<Film {title} {year} src={img} />
+						{:else}
+							<p>Loading...</p>
+						{/each}
+					{:catch error}
+						<p style="color: red">{error.message}</p>
+					{/await}
+				{/if} -->
 			</div>
 		</div>
 		<div class="tag-cloud">
@@ -283,6 +309,6 @@
 		</div>
 	</div>
 	<div class="sidebar">
-		<div class="ad" />
+		<MovieAdditionalInfo />
 	</div>
 </div>

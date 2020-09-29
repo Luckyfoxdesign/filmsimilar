@@ -10,7 +10,6 @@ export async function get(req, res) {
 
 function deleteUnnecessaryEntries(obj) {
 	obj.forEach((r) => {
-		delete r.id
 		delete r.country
 		delete r.desc
 		delete r.director

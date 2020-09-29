@@ -1,6 +1,6 @@
 {
-  "name": "TODO",
-  "description": "TODO",
+  "name": "FilmSimilar",
+  "description": "FilmSimilar app",
   "version": "0.0.1",
   "scripts": {
     "dev": "sapper dev",
@@ -12,7 +12,8 @@
     "compression": "^1.7.1",
     "node-fetch": "^2.6.1",
     "polka": "next",
-    "sirv": "^1.0.0"
+    "sirv": "^1.0.0",
+    "svelte-loading-skeleton": "^1.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
@@ -24,6 +25,7 @@
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.0.0",
     "@rollup/plugin-replace": "^2.2.0",
+    "@types/babel__core": "^7.1.10",
     "autoprefixer": "^10.0.0",
     "node-sass": "^4.14.1",
     "postcss": "^8.0.9",

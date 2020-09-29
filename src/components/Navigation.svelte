@@ -41,7 +41,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style>
 	.navigation {
 		display: flex;
 		justify-content: center;
@@ -53,31 +53,36 @@
 		grid-template-columns: auto auto auto 1fr;
 		column-gap: 24px;
 		grid-template-rows: auto;
-		.link {
-			text-decoration: none;
-			font-size: 14px;
-			font-weight: 400;
-			padding-bottom: 8px;
-			color: var(--Gray75);
-		}
-		.active {
-			color: var(--Violet);
-			border-bottom: 2px solid var(--Violet);
-		}
+	}
+	nav .link {
+		text-decoration: none;
+		font-size: 14px;
+		font-weight: 400;
+		padding-bottom: 8px;
+		color: var(--Gray75);
+	}
+	nav .active {
+		color: var(--Violet);
+		border-bottom: 2px solid var(--Violet);
 	}
 </style>
 
 <div class="navigation">
 	<nav>
-		<a
+		<!-- <a
 			class="link {currentTab === '/' || currentTab.includes('movies') ? 'active' : ''}"
 			data-active="no"
 			aria-current={segment === undefined ? 'page' : undefined}
 			href="."
 			on:click={clickTab}
 			on:mouseout={unhoverTab}
-			on:mouseover={hoverTab}>Фильмы</a>
+			on:mouseover={hoverTab}>Фильмы</a> -->
 		<a
+			class="link active"
+			data-active="no"
+			aria-current={segment === undefined ? 'page' : undefined}
+			href=".">Фильмы</a>
+		<!-- <a
 			class="link {currentTab === '/series' ? 'active' : ''}"
 			data-active="no"
 			aria-current={segment === 'series' ? 'page' : undefined}
@@ -92,6 +97,6 @@
 			href="/cartoons"
 			on:click={clickTab}
 			on:mouseout={unhoverTab}
-			on:mouseover={hoverTab}>Мультфильмы</a>
+			on:mouseover={hoverTab}>Мультфильмы</a> -->
 	</nav>
 </div>

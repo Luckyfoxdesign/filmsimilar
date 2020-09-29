@@ -1,5 +1,6 @@
 <script>
 	export let src
+	export let alt
 </script>
 
 <style>
@@ -16,4 +17,4 @@
 	}
 </style>
 
-<div class="poster"><img {src} alt="" align="center" /></div>
+<div class="poster"><img {src} {alt} align="center" /></div>
