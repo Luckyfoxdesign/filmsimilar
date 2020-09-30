@@ -1,0 +1,138 @@
+{
+  "id": 23813,
+  "title": "Матрица",
+  "year": 1987,
+  "src": "https://servername.com/matrixfilm.png",
+  "raiting": 6.7,
+  "genres": [
+    {
+      "genre": "Мистика"
+    },
+    {
+      "genre": "Криминал"
+    },
+    {
+      "genre": "Ужасы"
+    }
+  ],
+  "response": {
+    "status": "success",
+    "message": ""
+  }
+}
+
+{
+  "id": 23813,
+  "title": "Матрица",
+  "year": 1987,
+  "src": "https://servername.com/matrixfilm.png",
+  "raiting": 6.7,
+  "similarityPercent": 70,
+  "genres": [
+    {
+      "genre": "Мистика"
+    },
+    {
+      "genre": "Криминал"
+    },
+    {
+      "genre": "Ужасы"
+    }
+  ],
+  "response": {
+    "status": "error",
+    "message": "Название ошибки"
+  }
+}
+
+{
+  "kinopoiskRaitingCount": 238213,
+  "description": "Длинное текстовое описание фильма на несколько строк, может быть 5 или 10",
+  "country": "США",
+  "premiereWorldDate": 1987,
+  "genres": [
+    {
+      "genre": "Мистика"
+    },
+    {
+      "genre": "Криминал"
+    },
+    {
+      "genre": "Ужасы"
+    }
+  ],
+  "filmTrailers": [
+    {
+      "trailer": "https://youtu.be/1DNjKePVghc"
+    },
+    {
+      "trailer": "https://youtu.be/12zMcTNvmjM"
+    },
+  ],
+  "directors": [
+    {
+      "director": "Роджер Камбл"
+    },
+    {
+      "director": "Роджер Камбл младший"
+    },
+  ],
+  "writers": [
+    {
+      "writer": "Анна Тодд"
+    },
+    {
+      "writer": "Марио Селайя"
+    },
+  ],
+  "cast": [
+    {
+      "actor": "Джозефина Лэнгфорд"
+    },
+    {
+      "actor": "Хиро Файнс-Тиффин"
+    },
+  ],
+  "awards": [
+    {
+      "award": "Название награды1"
+    },
+    {
+      "award": "Название награды2"
+    },
+  ],
+  "tags": [
+    {
+      "tag": "Тег1"
+    },
+    {
+      "tag": "Тег2"
+    },
+  ],
+  "relatedFilms": [
+    {
+      "relatedFilm": {
+        "id": 23813,
+        "title": "Матрица",
+        "year": 1987,
+        "src": "https://servername.com/matrixfilm.png",
+        "raiting": 6.7,
+        "genres": [
+          {
+            "genre": "Мистика"
+          },
+          {
+            "genre": "Криминал"
+          },
+          {
+            "genre": "Ужасы"
+          }
+        ]
+      }
+    },
+  ],
+  "response": {
+    "status": "error",
+    "message": "Название ошибки"
+  }
+}

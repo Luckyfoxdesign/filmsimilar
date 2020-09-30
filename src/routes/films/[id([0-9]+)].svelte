@@ -1,5 +1,4 @@
 <script context="module">
-	import MovieAdditionalInfo from "./../../components/films/MovieAdditionalInfo.svelte"
 	// export function preload() {
 	// 	return this.fetch("/index.json")
 	// 		.then((r) => r.json())
@@ -13,6 +12,7 @@
 	import ButtonPrimary from "../../components/ButtonPrimary.svelte"
 	import FilmPoster from "../../components/film_block/FilmPoster.svelte"
 	import Film from "../../components/film_block/Film.svelte"
+	import MovieAdditionalInfo from "../../components/films/MovieAdditionalInfo.svelte"
 	import Tag from "../../components/Tag.svelte"
 	import { onMount } from "svelte"
 
@@ -29,10 +29,10 @@
 		}
 	}
 
-	// onMount(() => {
-	// 	isLoading = false
-	// 	getAdditionalFilmsPromise = getPopularFilms()
-	// })
+	onMount(() => {
+		isLoading = false
+		getAdditionalFilmsPromise = getAdditionalFilms()
+	})
 
 	// export let films
 	let r = "https://avatars.mds.yandex.net/get-kinopoisk-image/1946459/cc9a826d-74e1-4710-b665-63de8c423561/300x450"
