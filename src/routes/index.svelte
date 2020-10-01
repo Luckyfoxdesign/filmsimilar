@@ -7,8 +7,9 @@
 </script>
 
 <script>
-	import Film from "../components/film_block/Film.svelte"
+	import Film from "./films/_components/Film.svelte"
 	import LoadingOverlay from "./../components/LoadingOverlay.svelte"
+
 	// import { onMount } from "svelte"
 
 	// let getPopularFilmsPromise

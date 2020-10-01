@@ -10,28 +10,38 @@
 
 <script>
 	import ButtonPrimary from "../../components/ButtonPrimary.svelte"
-	import FilmPoster from "../../components/film_block/FilmPoster.svelte"
-	import Film from "../../components/film_block/Film.svelte"
-	import MovieAdditionalInfo from "../../components/films/MovieAdditionalInfo.svelte"
-	import Tag from "../../components/Tag.svelte"
+	import FilmPoster from "./_components/FilmPoster.svelte"
+	import Film from "./_components/Film.svelte"
+	import MovieAdditionalInfo from "./_components/MovieAdditionalInfo.svelte"
+	import Tag from "./_components/Tag.svelte"
 	import { onMount } from "svelte"
+	import { filmFirstData } from "./_store/store"
 
-	let getAdditionalFilmsPromise
-	let isLoading = true
+	// let getAdditionalFilmsPromise
+	// let isLoading = true
 
-	async function getAdditionalFilms() {
-		const res = await fetch("/index.json")
-		const text = await res.json()
-		if (res.ok) {
-			return text
-		} else {
-			throw new Error(text)
-		}
-	}
+	// async function getAdditionalFilms() {
+	// 	const res = await fetch("/index.json")
+	// 	const text = await res.json()
+	// 	if (res.ok) {
+	// 		return text
+	// 	} else {
+	// 		throw new Error(text)
+	// 	}
+	// }
 
 	onMount(() => {
-		isLoading = false
-		getAdditionalFilmsPromise = getAdditionalFilms()
+		if (window.performance) {
+			console.info("window.performance works fine on this browser")
+		}
+		console.info(PerformanceNavigation.type)
+		if (PerformanceNavigation.type == PerformanceNavigation.TYPE_RELOAD) {
+			console.info("This page is reloaded")
+		} else {
+			console.info("This page is not reloaded")
+		}
+		// isLoading = false
+		// getAdditionalFilmsPromise = getAdditionalFilms()
 	})
 
 	// export let films
@@ -160,16 +170,16 @@
 					alt="" />
 			</div>
 			<div class="film-head">
-				<FilmPoster src={r} />
+				<FilmPoster src={$filmFirstData.src} />
 				<div class="film-head-description">
-					<h1>Название фильма</h1>
+					<h1>{$filmFirstData.title}</h1>
 					<div class="film-raiting">
 						<svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path
 								d="M6 0L7.34708 4.1459H11.7063L8.17963 6.7082L9.52671 10.8541L6 8.2918L2.47329 10.8541L3.82037 6.7082L0.293661 4.1459H4.65292L6 0Z"
 								fill="#FFCC48" />
 						</svg>
-						<div class="film-review-raiting">7.8/10</div>
+						<div class="film-review-raiting">{$filmFirstData.kinopoiskRaiting}/10</div>
 						<div class="film-review-count">124000</div>
 					</div>
 					<ButtonPrimary name="Искать похожие фильмы" />

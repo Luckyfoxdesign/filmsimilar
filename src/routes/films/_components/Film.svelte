@@ -1,20 +1,36 @@
 <script>
 	import FilmPoster from "./FilmPoster.svelte"
+	import { filmFirstData } from "../_store/store"
 
 	export let src
 	export let title
 	export let year
 	export let id
+	export let kinopoiskRaiting
+	export let genres
 
-	// let isHovering = false
+	// function addFilmInfoToStore() {
+	// 	filmFirstData.set({
+	// 		id: id,
+	// 		title: title,
+	// 		src: src,
+	// 		kinopoiskRaiting: kinopoiskRaiting,
+	// 		year: year,
+	// 		genres: genres,
+	// 	})
+	// }
+	let filmInfo = {
+		id: id,
+		title: title,
+		src: src,
+		kinopoiskRaiting: kinopoiskRaiting,
+		year: year,
+		genres: genres,
+	}
 
-	// function showPreview() {
-	// 	isHovering = true
-	// 	//console.log(this)
-	// }
-	// function hidePreview() {
-	// 	isHovering = false
-	// }
+	function addFilmInfoToStore() {
+		filmFirstData.update((e) => (e = filmInfo))
+	}
 </script>
 
 <style>
@@ -58,32 +74,12 @@
 	a {
 		text-decoration: none;
 	}
-	/* .film-preview {
-		width: 404px;
-		height: 256px;
-		position: absolute;
-		top: 0;
-		left: -115px;
-		z-index: 2;
-		border-radius: 6px;
-	} */
 </style>
 
-<a href="films/{id}" class="film">
+<a href="films/{id}" class="film" on:click={addFilmInfoToStore}>
 	<FilmPoster {src} alt={title} />
 	<div class="film-info">
 		<div class="film-title">{title}</div>
 		<p class="film-description"><span class="film-production">{year}</span> <span class="film-genres" /></p>
 	</div>
-	<!-- {#if isHovering}
-		<div class="film-preview">
-			<iframe
-				width="404"
-				height="256"
-				src="https://www.youtube.com/embed/e1l1QnJ7WA8"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-				allowfullscreen />
-		</div>
-	{/if} -->
 </a>

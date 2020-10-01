@@ -34,7 +34,10 @@
 	.film-title {
 		font-weight: 700;
 	}
-	.film-year .film-genres {
+	.film-genres {
+		color: var(--Gray75);
+	}
+	.film-year {
 		color: var(--Gray75);
 	}
 	a {

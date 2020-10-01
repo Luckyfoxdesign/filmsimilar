@@ -9,10 +9,6 @@
 		justify-content: center;
 		min-height: calc(100vh - 74px);
 	}
-
-	footer {
-		height: 400px;
-	}
 </style>
 
 <Header />

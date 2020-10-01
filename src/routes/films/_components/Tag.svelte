@@ -9,6 +9,10 @@
 		line-height: 14px;
 		margin: 0;
 	}
+	.secondary-tag_l:hover {
+		background-color: #e8e8e8;
+		cursor: pointer;
+	}
 </style>
 
 <button class="secondary-tag_l" type="submit">Вулкан</button>
