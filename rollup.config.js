@@ -6,23 +6,23 @@ import babel from "@rollup/plugin-babel"
 import { terser } from "rollup-plugin-terser"
 import config from "sapper/config/rollup.js"
 import pkg from "./package.json"
-// import { sass } from "svelte-preprocess-sass"
+import { sass } from "svelte-preprocess-sass"
 
 const mode = process.env.NODE_ENV
 const dev = mode === "development"
 const legacy = !!process.env.SAPPER_LEGACY_BUILD
 
-// const preprocessOptions = {
-// 	transformers: {
-// 		postcss: {
-// 			plugins: [
-// 				require("postcss-import")(),
-// 				require("postcss-url")(),
-// 				require("autoprefixer")({ browsers: "last 4 version" }),
-// 			],
-// 		},
-// 	},
-// }
+const preprocessOptions = {
+	transformers: {
+		postcss: {
+			plugins: [
+				// require("postcss-import")(),
+				// require("postcss-url")(),
+				require("autoprefixer")({ browsers: "last 10 version" }),
+			],
+		},
+	},
+}
 
 const onwarn = (warning, onwarn) =>
 	(warning.code === "MISSING_EXPORT" && /'preload'/.test(warning.message)) ||
@@ -42,10 +42,10 @@ export default {
 				dev,
 				hydratable: true,
 				emitCss: true,
-				// preprocess: {
-				// 	style: sass({}, { name: "scss" }),
-				// },
-				// preprocess: require("svelte-preprocess")(preprocessOptions),
+				preprocess: {
+					style: sass({}, { name: "scss" }),
+				},
+				preprocess: require("svelte-preprocess")(preprocessOptions),
 			}),
 			resolve({
 				browser: true,
@@ -99,10 +99,10 @@ export default {
 				generate: "ssr",
 				hydratable: true,
 				dev,
-				// preprocess: {
-				// 	style: sass({}, { name: "scss" }),
-				// },
-				// preprocess: require("svelte-preprocess")(preprocessOptions),
+				preprocess: {
+					style: sass({}, { name: "scss" }),
+				},
+				preprocess: require("svelte-preprocess")(preprocessOptions),
 			}),
 			resolve({
 				dedupe: ["svelte"],

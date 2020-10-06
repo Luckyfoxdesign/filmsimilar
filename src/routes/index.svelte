@@ -35,31 +35,18 @@
 	export let films
 </script>
 
-<style>
-	.container-films {
-		display: grid;
-		grid-template-columns: 800px 1fr;
-		grid-template-rows: auto;
-		width: 1024px;
-		position: relative;
-	}
-	.films {
+<style lang="scss">
+	.popular-films {
 		padding-top: 24px;
-	}
-	.films-list {
-		display: grid;
-		grid-template-columns: repeat(4, 174px);
-		grid-template-rows: auto;
-		margin-top: 24px;
-		row-gap: 24px;
-		column-gap: 24px;
-		margin-bottom: 96px;
-	}
-	.sidebar {
-		border-left: 0.5px solid var(--GrayCC);
-		padding-left: 32px;
-		padding-top: 24px;
-		position: relative;
+		&__list {
+			display: grid;
+			grid-template-columns: repeat(4, 174px);
+			grid-template-rows: auto;
+			margin-top: 24px;
+			row-gap: 24px;
+			column-gap: 24px;
+			margin-bottom: 96px;
+		}
 	}
 	.ad {
 		position: sticky;
@@ -74,13 +61,13 @@
 	<title>Sapper project template</title>
 </svelte:head>
 
-<div class="container-films">
+<div class="container-ad">
 	{#if $preloading}
 		<LoadingOverlay />
 	{/if}
-	<div class="films">
+	<div class="popular-films">
 		<h1>Популярные фильмы</h1>
-		<div class="films-list">
+		<div class="popular-films__list">
 			<!-- {#if isLoading}
 				{#await getPopularFilmsPromise}
 					<Spiner text="Загрузка..." />

@@ -9,6 +9,8 @@
 	export let kinopoiskRaiting
 	export let genres
 
+	let fl = false
+
 	// function addFilmInfoToStore() {
 	// 	filmFirstData.set({
 	// 		id: id,

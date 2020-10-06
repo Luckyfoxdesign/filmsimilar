@@ -1,9 +1,25 @@
 <script>
+	import { filmFirstData } from "../../routes/films/_store/store"
+
 	export let id
 	export let title
 	export let src
 	export let year
 	export let genres
+	export let kinopoiskRaiting
+
+	let filmInfo = {
+		id: id,
+		title: title,
+		src: src,
+		kinopoiskRaiting: kinopoiskRaiting,
+		year: year,
+		genres: genres,
+	}
+
+	function addFilmInfoToStore() {
+		filmFirstData.update((e) => (e = filmInfo))
+	}
 </script>
 
 <style>
@@ -46,7 +62,7 @@
 	}
 </style>
 
-<a href="films/{id}" class="film">
+<a href="films/{id}" class="film" on:click={addFilmInfoToStore}>
 	<div class="film-poster"><img {src} alt={title} /></div>
 	<div class="film-info">
 		<div class="film-title">{title}</div>

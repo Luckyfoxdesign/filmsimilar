@@ -2,25 +2,26 @@
 	import SimilarityPercent from "./SimilarityPercent.svelte"
 	import Raiting from "./FilmRaiting.svelte"
 
-	export let src
-	export let alt
-	export let raiting
+	export let src = null
+	export let alt = null
+	export let raiting = null
+	export let similarityPercent = null
 </script>
 
-<style>
-	.poster {
+<style lang="scss">
+	.film-poster {
 		width: 174px;
 		height: 256px;
 		overflow: hidden;
 		border-radius: 4px;
 		position: relative;
+		&__image {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
-	img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-	.raiting-similarity {
+	.raiting-data {
 		position: absolute;
 		bottom: 8px;
 		left: 8px;
@@ -31,10 +32,14 @@
 	}
 </style>
 
-<div class="poster">
-	<div class="raiting-similarity">
-		<Raiting />
-		<SimilarityPercent />
+<div class="film-poster">
+	<div class="raiting-data">
+		{#if raiting != null}
+			<Raiting />
+		{/if}
+		{#if similarityPercent != null}
+			<SimilarityPercent />
+		{/if}
 	</div>
-	<img {src} {alt} align="center" />
+	<img class="film-poster__image" {src} {alt} align="center" />
 </div>

@@ -4,10 +4,17 @@
 
 <style>
 	.info-containter {
+		display: -ms-grid;
 		display: grid;
+		-ms-grid-columns: 1fr;
 		grid-template-columns: 1fr;
+		-ms-grid-rows: auto;
 		grid-template-rows: auto;
 		row-gap: 24px;
+	}
+	.info-containter > *:nth-child(1) {
+		-ms-grid-row: 1;
+		-ms-grid-column: 1;
 	}
 </style>
 
