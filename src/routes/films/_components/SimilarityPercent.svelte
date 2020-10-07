@@ -14,4 +14,4 @@
 	}
 </style>
 
-<div class="similarity-percent">70%</div>
+<div class="similarity-percent">{similarityPercent}%</div>

@@ -9,28 +9,8 @@
 <script>
 	import Film from "./films/_components/Film.svelte"
 	import LoadingOverlay from "./../components/LoadingOverlay.svelte"
-
-	// import { onMount } from "svelte"
-
-	// let getPopularFilmsPromise
-	// let isLoading = false
-
-	// async function getPopularFilms() {
-	// 	const res = await fetch("/index.json")
-	// 	const resp = await res.json()
-	// 	if (res.ok) {
-	// 		return resp
-	// 	} else {
-	// 		isLoading = false
-	// 		throw new Error(resp)
-	// 	}
-	// }
-
-	// onMount(() => {
-	// 	isLoading = true
-	// 	getPopularFilmsPromise = getPopularFilms()
-	// })
 	import { stores } from "@sapper/app"
+
 	const { preloading } = stores()
 	export let films
 </script>
@@ -68,22 +48,9 @@
 	<div class="popular-films">
 		<h1>Популярные фильмы</h1>
 		<div class="popular-films__list">
-			<!-- {#if isLoading}
-				{#await getPopularFilmsPromise}
-					<Spiner text="Загрузка..." />
-				{:then films}
-					{#each films as { id, title, year, img }}
-						<Film {id} {title} {year} src={img} />
-					{:else}
-						<p>Loading...</p>
-					{/each}
-				{:catch error}
-					<p style="color: red">{error.message}</p>
-				{/await}
-			{/if} -->
 			{#each films as { id, title, year, img }}
-			<Film {id} {title} {year} src={img} />
-		{/each}
+				<Film {id} {title} {year} src={img} />
+			{/each}
 		</div>
 	</div>
 	<div class="sidebar">

@@ -35,9 +35,12 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	.film {
 		position: relative;
+		&:hover .film-title {
+			color: var(--Violet);
+		}
 	}
 	.film-title {
 		color: var(--Gray33);
@@ -79,7 +82,7 @@
 </style>
 
 <a href="films/{id}" class="film" on:click={addFilmInfoToStore}>
-	<FilmPoster {src} alt={title} />
+	<FilmPoster {src} alt={title} raiting={8.2} similarityPercent={12} />
 	<div class="film-info">
 		<div class="film-title">{title}</div>
 		<p class="film-description"><span class="film-production">{year}</span> <span class="film-genres" /></p>

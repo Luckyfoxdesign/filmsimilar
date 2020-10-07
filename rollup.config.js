@@ -13,14 +13,15 @@ const dev = mode === "development"
 const legacy = !!process.env.SAPPER_LEGACY_BUILD
 
 const preprocessOptions = {
-	transformers: {
-		postcss: {
-			plugins: [
-				// require("postcss-import")(),
-				// require("postcss-url")(),
-				require("autoprefixer")({ browsers: "last 10 version" }),
-			],
-		},
+	postcss: {
+		plugins: [
+			require("postcss-import"),
+			require("postcss-preset-env")({
+				stage: 0,
+				browsers: "last 6 versions",
+				autoprefixer: { grid: true },
+			}),
+		],
 	},
 }
 

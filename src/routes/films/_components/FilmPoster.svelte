@@ -38,7 +38,7 @@
 			<Raiting />
 		{/if}
 		{#if similarityPercent != null}
-			<SimilarityPercent />
+			<SimilarityPercent {similarityPercent} />
 		{/if}
 	</div>
 	<img class="film-poster__image" {src} {alt} align="center" />
