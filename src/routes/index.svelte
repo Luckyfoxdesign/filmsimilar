@@ -26,6 +26,23 @@
 			row-gap: 24px;
 			column-gap: 24px;
 			margin-bottom: 96px;
+			@media screen and (max-width: 992px) {
+				grid-template-columns: repeat(4, 151px);
+			}
+			@media screen and (max-width: 768px) {
+				grid-template-columns: repeat(3, 140px);
+				column-gap: 16px;
+			}
+			@media screen and (max-width: 576px) {
+				grid-template-columns: repeat(3, 170px);
+				column-gap: 16px;
+				margin-bottom: 32px;
+			}
+			@media screen and (max-width: 322px) {
+				grid-template-columns: repeat(2, 141px);
+				column-gap: 16px;
+				margin-bottom: 32px;
+			}
 		}
 	}
 	.ad {
@@ -34,6 +51,18 @@
 		width: 100%;
 		height: 400px;
 		background-color: var(--GrayCC);
+		@media screen and (max-width: 576px) {
+			position: initial;
+			width: 100%;
+			height: 168px;
+			margin-bottom: 96px;
+		}
+		@media screen and (max-width: 322px) {
+			position: initial;
+			width: 100%;
+			height: 168px;
+			margin-bottom: 96px;
+		}
 	}
 </style>
 

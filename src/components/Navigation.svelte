@@ -41,7 +41,7 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
 	.navigation {
 		display: flex;
 		justify-content: center;
@@ -53,6 +53,26 @@
 		grid-template-columns: auto auto auto 1fr;
 		column-gap: 24px;
 		grid-template-rows: auto;
+		@media screen and (max-width: 992px) {
+			padding-left: 30px;
+			// padding-right: 30px;
+			width: 932px;
+		}
+		@media screen and (max-width: 768px) {
+			padding-left: 30px;
+			// padding-right: 30px;
+			width: 708px;
+		}
+		@media screen and (max-width: 576px) {
+			padding-left: 16px;
+			// padding-right: 16px;
+			width: 544px;
+		}
+		@media screen and (max-width: 322px) {
+			padding-left: 12px;
+			// padding-right: 12px;
+			width: 298px;
+		}
 	}
 	nav .link {
 		text-decoration: none;

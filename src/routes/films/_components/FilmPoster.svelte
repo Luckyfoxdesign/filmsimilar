@@ -20,6 +20,22 @@
 			height: 100%;
 			object-fit: cover;
 		}
+		@media screen and (max-width: 992px) {
+			width: 151px;
+			height: 222px;
+		}
+		@media screen and (max-width: 768px) {
+			width: 140px;
+			height: 206px;
+		}
+		@media screen and (max-width: 576px) {
+			width: 170px;
+			height: 250px;
+		}
+		@media screen and (max-width: 322px) {
+			width: 141px;
+			height: 208px;
+		}
 	}
 	.raiting-data {
 		position: absolute;
