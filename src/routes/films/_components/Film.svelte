@@ -93,7 +93,7 @@
 	}
 </style>
 
-<a href="films/{id}" class="film" on:click={addFilmInfoToStore}>
+<a rel="prefetch" href="films/{id}" class="film" on:click={addFilmInfoToStore}>
 	<FilmPoster {src} alt={title} raiting={8.2} similarityPercent={12} />
 	<div class="film-info">
 		<div class="film-title">{title}</div>
