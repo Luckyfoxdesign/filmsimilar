@@ -1,10 +1,12 @@
 <script>
+	import Logo from "../routes/films/_components/Logo.svelte"
+
 	export let segment
 	import Nav from "./Navigation.svelte"
 	import SearchInput from "./SearchInput.svelte"
 </script>
 
-<style>
+<style lang="scss">
 	header {
 		display: flex;
 		justify-content: center;
@@ -39,16 +41,11 @@
 			row-gap: 16px;
 		}
 	}
-	.logo {
-		width: 160px;
-		height: 40px;
-		background-color: var(--Violet);
-	}
 </style>
 
 <header>
 	<div class="search-bar">
-		<div class="logo" />
+		<a rel="prefetch" href="."><Logo /></a>
 		<SearchInput />
 	</div>
 </header>
