@@ -50,11 +50,13 @@
 		grid-template-rows: auto;
 		row-gap: 32px;
 		margin-bottom: 96px;
+		padding-right: 32px;
 	}
 	.main-information {
-		position: relative;
-		padding-top: 72px;
-		padding-left: 24px;
+		display: grid;
+		grid-template-columns: auto 1fr;
+		column-gap: 32px;
+		margin-top: 24px;
 	}
 	.film-information {
 		display: grid;
@@ -62,6 +64,13 @@
 		grid-template-rows: auto;
 		column-gap: 16px;
 		align-items: end;
+	}
+	.film-title {
+		margin-bottom: 8px;
+	}
+	.film-description {
+		margin-top: 16px;
+		margin-bottom: 24px;
 	}
 	.related-films {
 		&__films-list {
@@ -76,23 +85,22 @@
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>{$filmFirstData.title}</title>
 </svelte:head>
 
 <div class="container-ad">
 	<div class="film-about">
 		<div class="main-information">
-			<FilmBlockBackground />
-			<div class="film-information">
-				<FilmPoster src={$filmFirstData.src} />
-				<div>
-					<h1>{$filmFirstData.title}</h1>
-					<FilmRaitingBig reviewCount={0} raitingCount={$filmFirstData.kinopoiskRaiting} />
-					<ButtonPrimary name="Искать похожие фильмы" />
+			<FilmPoster src={$filmFirstData.src} />
+			<div>
+				<h1 class="film-title">{$filmFirstData.title}</h1>
+				<FilmRaitingBig reviewCount={0} raitingCount={$filmFirstData.kinopoiskRaiting} />
+				<div class="film-description">
+					<FilmDescription />
 				</div>
+				<ButtonPrimary name="Искать похожие фильмы" />
 			</div>
 		</div>
-		<FilmDescription />
 		<FilmTrailer />
 		<div class="related-films">
 			<h2>Смотрите также</h2>

@@ -12,6 +12,7 @@
 		justify-content: center;
 		padding-top: 16px;
 		padding-bottom: 32px;
+		border-bottom: 1px solid var(--GrayCC);
 		@media screen and (max-width: 992px) {
 			padding-left: 30px;
 			padding-right: 30px;
@@ -50,4 +51,4 @@
 	</div>
 </header>
 
-<Nav {segment} />
+<!-- <Nav {segment} /> -->

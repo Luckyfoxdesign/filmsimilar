@@ -6,8 +6,6 @@
 <style lang="scss">
 	.film-information {
 		&__raiting-block {
-			margin-top: 8px;
-			margin-bottom: 24px;
 			display: flex;
 			flex-direction: row;
 			align-items: center;

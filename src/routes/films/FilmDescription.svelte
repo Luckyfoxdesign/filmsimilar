@@ -3,7 +3,6 @@
 		margin-top: 0;
 		margin-bottom: 0;
 		line-height: 1.429;
-		margin-right: 32px;
 		color: var(--Gray33);
 	}
 </style>
