@@ -17,17 +17,18 @@
 	const { preloading } = stores()
 </script>
 
-<style>
-	.container {
-		display: grid;
-		grid-template-columns: 800px 1fr;
-		grid-template-rows: auto;
-		width: 1024px;
-		position: relative;
-	}
+<style lang="scss">
 	.films {
 		padding-top: 24px;
-		padding-right: 32px;
+
+		@media screen and (min-width: 0px) {
+			padding-right: none;
+			margin-bottom: 32px;
+		}
+		@media screen and (min-width: 576px) {
+			padding-right: 32px;
+			margin-bottom: none;
+		}
 	}
 	.films-list {
 		display: grid;
@@ -36,20 +37,6 @@
 		margin-top: 24px;
 		row-gap: 24px;
 		column-gap: 24px;
-		margin-bottom: 96px;
-	}
-	.sidebar {
-		border-left: 0.5px solid var(--GrayCC);
-		padding-left: 32px;
-		padding-top: 24px;
-		position: relative;
-	}
-	.ad {
-		position: sticky;
-		top: 24px;
-		width: 100%;
-		height: 400px;
-		background-color: var(--GrayCC);
 	}
 	p {
 		margin-top: 12px;
@@ -58,10 +45,10 @@
 </style>
 
 <svelte:head>
-	<title>Sapper project template</title>
+	<title>Результаты поиска</title>
 </svelte:head>
 
-<div class="container">
+<div class="container-ad">
 	{#if $preloading}
 		<LoadingOverlay />
 	{/if}

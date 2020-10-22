@@ -1,11 +1,17 @@
-<style>
+<style lang="scss">
 	footer {
 		background-color: #151a30;
 		width: 100%;
+		display: flex;
+		@media screen and (min-width: 0px) {
+			justify-content: start;
+		}
+		@media screen and (min-width: 576px) {
+			justify-content: center;
+		}
 	}
 	.contaner {
 		display: grid;
-		grid-template-columns: 1fr;
 		grid-template-rows: auto auto;
 		row-gap: 8px;
 		padding-top: 12px;
@@ -16,16 +22,16 @@
 			padding-left: 12px;
 		}
 		@media screen and (min-width: 322px) {
-			padding-left: 12px;
+			grid-template-columns: 1fr;
 		}
 		@media screen and (min-width: 576px) {
-			padding-left: 30px;
+			grid-template-columns: 708px;
 		}
 		@media screen and (min-width: 768px) {
-			padding-left: 30px;
+			grid-template-columns: 932px;
 		}
 		@media screen and (min-width: 992px) {
-			padding-left: 30px;
+			grid-template-columns: 1024px;
 		}
 	}
 	.link {

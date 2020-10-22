@@ -3,7 +3,7 @@
 	import Header from "../components/Header.svelte"
 </script>
 
-<style>
+<style lang="scss">
 	main {
 		display: flex;
 		min-height: calc(100vh - 74px);
@@ -21,6 +21,7 @@
 			grid-template-columns: 1fr;
 			padding-left: 12px;
 			padding-right: 12px;
+			width: 100%;
 		}
 		@media screen and (min-width: 322px) {
 			grid-template-columns: 1fr;
@@ -35,6 +36,7 @@
 			padding-right: 30px;
 			margin-left: auto;
 			margin-right: auto;
+			width: auto;
 		}
 		@media screen and (min-width: 768px) {
 			padding-left: 30px;
