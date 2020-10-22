@@ -63,17 +63,22 @@
 	.film-info {
 		margin-top: 8px;
 		max-width: 174px;
-		@media screen and (max-width: 992px) {
-			max-width: 151px;
-		}
-		@media screen and (max-width: 768px) {
+		@media screen and (min-width: 0px) {
 			max-width: 140px;
 		}
-		@media screen and (max-width: 576px) {
-			max-width: 170px;
+		// @media screen and (min-width: 322px) {
+		// 	max-width: 140px;
+		// }
+		// @media screen and (min-width: 576px) {
+		// 	max-width: 140px;
+		// }
+		@media screen and (min-width: 768px) {
+			//max-width: 140px;
+			max-width: 151px;
 		}
-		@media screen and (max-width: 322px) {
-			max-width: 141px;
+		@media screen and (min-width: 992px) {
+			//max-width: 151px;
+			max-width: 174px;
 		}
 	}
 	.film-description {

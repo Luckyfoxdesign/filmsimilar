@@ -20,21 +20,33 @@
 			height: 100%;
 			object-fit: cover;
 		}
-		@media screen and (max-width: 992px) {
-			width: 151px;
-			height: 222px;
-		}
-		@media screen and (max-width: 768px) {
+		@media screen and (min-width: 0px) {
 			width: 140px;
 			height: 206px;
 		}
-		@media screen and (max-width: 576px) {
-			width: 170px;
-			height: 250px;
+		@media screen and (min-width: 322px) {
+			// width: 141px;
+			// height: 208px;
+			width: 140px;
+			height: 206px;
 		}
-		@media screen and (max-width: 322px) {
-			width: 141px;
-			height: 208px;
+		@media screen and (min-width: 576px) {
+			// width: 170px;
+			// height: 250px;
+			width: 140px;
+			height: 206px;
+		}
+		@media screen and (min-width: 768px) {
+			// width: 140px;
+			// height: 206px;
+			width: 151px;
+			height: 222px;
+		}
+		@media screen and (min-width: 992px) {
+			// width: 151px;
+			// height: 222px;
+			width: 174px;
+			height: 256px;
 		}
 	}
 	.raiting-data {

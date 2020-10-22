@@ -31,6 +31,7 @@
 	.search-input {
 		position: relative;
 		width: 100%;
+		height: 40px;
 	}
 	.input {
 		width: inherit;

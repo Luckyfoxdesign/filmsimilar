@@ -1,5 +1,5 @@
 {
-  "name": "FilmSimilar",
+  "name": "lookatfilm",
   "description": "FilmSimilar app",
   "version": "0.0.1",
   "scripts": {
@@ -12,8 +12,7 @@
     "compression": "^1.7.1",
     "node-fetch": "^2.6.1",
     "polka": "next",
-    "sirv": "^1.0.0",
-    "svelte-loading-skeleton": "^1.0.1"
+    "sirv": "^1.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",

@@ -6,40 +6,46 @@
 <style>
 	main {
 		display: flex;
-		justify-content: center;
 		min-height: calc(100vh - 74px);
 		@media screen and (max-width: 576px) {
-			justify-content: flex-start;
+			justify-content: start;
 		}
 	}
 	:global(.container-ad) {
 		display: grid;
-		grid-template-columns: 800px 1fr;
-		grid-template-rows: auto;
-		width: 1024px;
 		position: relative;
+		margin-left: auto;
+		margin-right: auto;
 
-		@media screen and (max-width: 992px) {
-			grid-template-columns: 708px 1fr;
-			width: 932px;
-			padding-left: 30px;
-			/* padding-right: 30px; */
-		}
-		@media screen and (max-width: 768px) {
-			grid-template-columns: 484px 1fr;
-			width: 708px;
-			padding-left: 30px;
-			/* padding-right: 30px; */
-		}
-		@media screen and (max-width: 576px) {
+		@media screen and (min-width: 0px) {
 			grid-template-columns: 1fr;
-			width: 544px;
-			padding-left: 16px;
-		}
-		@media screen and (max-width: 322px) {
-			grid-template-columns: 1fr;
-			width: 298px;
 			padding-left: 12px;
+			padding-right: 12px;
+		}
+		@media screen and (min-width: 322px) {
+			grid-template-columns: 1fr;
+			padding-left: 12px;
+			padding-right: 12px;
+			margin-left: 0;
+			margin-right: 0;
+		}
+		@media screen and (min-width: 576px) {
+			grid-template-columns: 484px 224px;
+			padding-left: 30px;
+			padding-right: 30px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		@media screen and (min-width: 768px) {
+			padding-left: 30px;
+			padding-right: 30px;
+			grid-template-columns: 708px 224px;
+		}
+		@media screen and (min-width: 992px) {
+			grid-template-columns: 800px 224px;
+			grid-template-rows: auto;
+			padding-left: 30px;
+			padding-right: 30px;
 		}
 	}
 	:global(.sidebar) {
@@ -47,6 +53,7 @@
 		padding-left: 32px;
 		padding-top: 24px;
 		position: relative;
+		width: 191px;
 
 		@media screen and (max-width: 576px) {
 			border-top: 0.5px solid var(--GrayCC);
@@ -54,6 +61,7 @@
 			border-left: none;
 			padding-left: 0;
 			position: relative;
+			width: 100%;
 		}
 	}
 </style>
